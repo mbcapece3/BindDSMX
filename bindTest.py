@@ -30,17 +30,18 @@ class bindDSM:
             time.sleep_us(self.pulseWidth_us)
             self.signalPin.value(1)
             time.sleep_us(self.pulseWidth_us)
-            print(i+1)
+            #print(i+1)
 
 
-switchSignal = Pin(15,Pin.IN,Pin.PULL_DOWN)         #Switch input with pull down resistor
+switchSignal = Pin(15, Pin.IN)                      #Switch input (Use External 10K Pulldown resistor)
 rc = bindDSM(signalPin=10, vccPin=0)                #Create bind object
 
 rc.vccPin.value(1)                                  #Power Reciever Pin to prepare for physical switch input
 rc.signalPin.value(1)                               #Power Signal Pin to prepare for falling pulse
-time.sleep(2)                                       #Delay to ensure pins powered on
+time.sleep(5)                                       #Delay to ensure pins powered on
 
 while(1):
+
     if (switchSignal.value()):
         print('High')
         time.sleep_ms(100)                          #Delay to ensure reciever fully powered on before pulses delivered
