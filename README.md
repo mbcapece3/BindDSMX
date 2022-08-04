@@ -1,4 +1,4 @@
-# BindDSMX!
+# BindDSMX
 ## Overview
 Test
 ## Software
