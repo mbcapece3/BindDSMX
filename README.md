@@ -30,6 +30,6 @@ This code was tested on both a Raspberry Pi Pico, and a NodeMCU ESP8266 microcon
 
 The most elegant solution would be to use an enable pin to control power application from the external power source, but this hardware was not on hand. Instead a push button switch was used to power the reciever while simultaneously sending a signal to a GPIO Input pin. When the microcontroller reads a high input signal, it knows to begin sending the pulses. The button must remain pressed throughout the bind process to continue power application to the reciever.
 
-NOTE: SPEKTRUM SATELLITE RECEIVERS ARE 3.3V DEVICES! Application of more than 3.6V will destroy the chip, so a Battery Eliminator Circuit (BEC) may be required depending on power source.
+NOTE: SPEKTRUM SATELLITE RECEIVERS ARE 3.3V DEVICES! Application of more than 3.6V will destroy the chip, so a Battery Eliminator Circuit (BEC) may be required depending on power source voltage.
 
 ![BindCircuit](https://user-images.githubusercontent.com/104041016/182746055-f7c7d6db-a366-4edc-8f20-23109ccb1560.png)
