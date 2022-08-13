@@ -28,7 +28,7 @@ The binding procedure was implemented in both Arduino (C++) and MicroPython. The
 ## Hardware
 This code was tested on both a Raspberry Pi Pico, and a NodeMCU ESP8266 microcontroller. The initial goal was to power the reciever from a 3.3V GPIO pin so that the exact time of reciever power application was known and the pulses could be applied within 200ms. However, this was impossible due to the current limits on these microcontrollers. Therefore an external power source was required to power the receiver.
 
-The most elegant solution would be to use an enable pin to control power application from the external power source, but this hardware was not on hand. Instead a push button switch was used to power the reciever while simultaneously sending a signal to a GPIO Input pin. When the microcontroller reads a high input signal, it knows to begin sending the pulses. The button must remain pressed throughout the bind process to continue power application to the reciever.
+The most elegant solution would be to use a mosfet or a BEC with an enable pin to control power application from the external power source, but this hardware was not on hand. Instead a push button switch was used to power the reciever while simultaneously sending a signal to a GPIO Input pin. When the microcontroller reads a high input signal, it knows to begin sending the pulses. The button must remain pressed throughout the bind process to continue power application to the reciever.
 
 NOTE: SPEKTRUM SATELLITE RECEIVERS ARE 3.3V DEVICES! Application of more than 3.6V will destroy the chip, so a Battery Eliminator Circuit (BEC) may be required depending on power source voltage.
 
